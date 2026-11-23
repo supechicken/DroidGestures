@@ -28,8 +28,8 @@ android {
         applicationId = "dev.supechicken666.droidgestures"
         minSdk = 34
         targetSdk = 37
-        versionCode = 10
-        versionName = "1.0"
+        versionCode = 101
+        versionName = "1.0.1"
 
         ndk {
             abiFilters.clear()
@@ -41,7 +41,7 @@ android {
         create("release") {
             storeFile = file("release.keystore")
             storePassword = System.getenv("KEY_PASSWORD")
-            keyAlias = "release"
+            keyAlias = "releasekey"
             keyPassword = System.getenv("KEY_PASSWORD")
         }
     }

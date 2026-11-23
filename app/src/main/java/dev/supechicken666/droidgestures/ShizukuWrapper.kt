@@ -1,6 +1,8 @@
 /*
  * Copyright (C) 2026 SupeChicken666 <me@supechicken666.dev>
  *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -31,7 +33,7 @@ object ShizukuWrapper {
         shizukuAuthorized.value = Shizuku.checkSelfPermission() == PackageManager.PERMISSION_GRANTED
 
         // Connect to existing service if it is already running
-        if (Shizuku.peekUserService(gestureServiceArgs, gestureServiceConnection) != -1) {
+        if (shizukuAuthorized.value && Shizuku.peekUserService(gestureServiceArgs, gestureServiceConnection) != -1) {
             Shizuku.bindUserService(gestureServiceArgs, gestureServiceConnection)
         }
     }
